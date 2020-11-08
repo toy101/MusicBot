@@ -61,7 +61,7 @@ class Music(commands.Cog):
         """Plays from a url (almost anything youtube_dl supports)"""
 
         async with ctx.typing():
-            player = await YTDLSource.from_url(url, loop=self.bot.loop, stream=True)
+            player = await YTDLSource.from_url(url, loop=self.bot.loop, stream=False)
                                                             # if stream=False
                                                             # do predownload
             ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
