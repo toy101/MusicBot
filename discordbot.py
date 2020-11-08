@@ -16,8 +16,8 @@ try:
 except:
     # For deploy on Heroku
     TOKEN = os.environ['DISCORD_BOT_TOKEN']
-    if not discord.opus.is_loaded():
-        discord.opus.load_opus("heroku-buildpack-libopus")
+    # if not discord.opus.is_loaded():
+    #     discord.opus.load_opus("heroku-buildpack-libopus")
 
 class Music(commands.Cog):
     def __init__(self, bot):
