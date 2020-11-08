@@ -8,16 +8,19 @@ from ytdl import YTDLSource
 bot = commands.Bot(command_prefix='/')
 
 token_path = "token.txt"
-try:
-    # For local test
-    with open(token_path) as f:
-        TOKEN = f.read()
-        TOKEN = TOKEN.strip()
-except:
-    # For deploy on Heroku
-    TOKEN = os.environ['DISCORD_BOT_TOKEN']
-    if not discord.opus.is_loaded():
-        discord.opus.load_opus("heroku-buildpack-libopus")
+# try:
+#     # For local test
+#     with open(token_path) as f:
+#         TOKEN = f.read()
+#         TOKEN = TOKEN.strip()
+# except:
+#     # For deploy on Heroku
+#     TOKEN = os.environ['DISCORD_BOT_TOKEN']
+#     if not discord.opus.is_loaded():
+#         discord.opus.load_opus("heroku-buildpack-libopus")
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
+if not discord.opus.is_loaded():
+    discord.opus.load_opus("heroku-buildpack-libopus")
 
 class Music(commands.Cog):
     def __init__(self, bot):
