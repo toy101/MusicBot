@@ -140,7 +140,7 @@ async def ping(ctx):
 @bot.event
 async def on_ready():
     print('Logged in as {0} ({0.id})'.format(bot.user))
-    print('------')
+    print('-------')
 
 bot.add_cog(Music(bot))
 bot.run(TOKEN)
